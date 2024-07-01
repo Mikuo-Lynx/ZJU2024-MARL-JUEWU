@@ -5,7 +5,7 @@ from collections import deque
 import time
 
 
-env = gym.make('CartPole-v1')
+env = gym.make('Acrobot-v1')
 print('observation space:', env.observation_space)
 print('action space:', env.action_space)
 threshold = env.spec.reward_threshold
@@ -25,10 +25,10 @@ class Policy():
         return action
 
 
-env.seed(0)
+# env.seed(0)
 np.random.seed(0)
 
-policy = Policy()
+policy = Policy(6,3)
 
 def hill_climbing(n_episodes=10000, gamma=0.99, noise_scale=1e-2):
 
